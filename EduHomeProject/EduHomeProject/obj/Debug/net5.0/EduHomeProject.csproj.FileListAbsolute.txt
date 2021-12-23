@@ -114,3 +114,8 @@ C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHome-BackEndProject\EduHomeProj
 C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHome-BackEndProject\EduHomeProject\EduHomeProject\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHome-BackEndProject\EduHomeProject\EduHomeProject\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHome-BackEndProject\EduHomeProject\EduHomeProject\obj\Debug\net5.0\Razor\Views\About\Index.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHome-BackEndProject\EduHomeProject\EduHomeProject\obj\Debug\net5.0\Razor\Views\Course\Index.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHome-BackEndProject\EduHomeProject\EduHomeProject\obj\Debug\net5.0\Razor\Views\Event\Index.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHome-BackEndProject\EduHomeProject\EduHomeProject\obj\Debug\net5.0\Razor\Views\Teacher\Index.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHome-BackEndProject\EduHomeProject\EduHomeProject\obj\Debug\net5.0\Razor\Views\Blog\Index.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHome-BackEndProject\EduHomeProject\EduHomeProject\obj\Debug\net5.0\Razor\Views\Contact\Index.cshtml.g.cs
