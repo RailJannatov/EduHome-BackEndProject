@@ -20,8 +20,5 @@ namespace EduHomeProject.Models
         public Teacher Teacher { get; set; }
         public Skill Skill { get; set; }
         public ContactInformation ContactInformation { get; set; }
-
-    
-
     }
 }

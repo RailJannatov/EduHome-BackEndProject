@@ -1,0 +1,48 @@
+﻿@model Teacher
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">@Model.Name</h4>
+                <p>
+                    <img src="~/img/@Model.TeacherImageName" style="width:150px;height:150px" />
+                </p>
+                <span>About Me</span>
+                <p>@Model.TeacherDetail.AboutMeDescription</p>
+                <span>Teacher Degree</span>
+                <p>@Model.TeacherDetail.Degree</p>
+                <span>Teacher hobbies</span>
+                <p>@Model.TeacherDetail.Hobbies</p>
+                <span>Teacher Experience</span>
+                <p>@Model.TeacherDetail.Experience</p>
+                <span>Teacher Faculty</span>
+                <p>@Model.TeacherDetail.Faculty</p>
+                <span> Teacher Professions</span>
+                @foreach(var item in Model.TeacherProfessions)
+                   {
+
+                        <p>@item.Profession.ProfessionName</p>
+
+                   }
+                <span>Innovation Degree</span>
+                <p> @Model.TeacherDetail.Skill.InnovationDegree</p>
+                <span>Language Degree</span>
+                <p> @Model.TeacherDetail.Skill.LanguageDegree</p>
+                <span>Innovation Degree</span>
+                <p> @Model.TeacherDetail.Skill.InnovationDegree</p>
+                <span> Communication Degree</span>
+                <p> @Model.TeacherDetail.Skill.CommunicationDegree</p>
+                <span> Development Degree</span>
+                <p> @Model.TeacherDetail.Skill.DevelopmentDegree</p>
+                <span>Design Degree</span>
+                <p> @Model.TeacherDetail.Skill.DesignDegree</p>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-primary" asp-action="Index">Go Back</a>
+</div>
+
