@@ -1,4 +1,5 @@
-﻿using EduHomeProject.Models;
+﻿using EduHomeProject.DataAccessLayer;
+using EduHomeProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,11 +12,11 @@ namespace EduHomeProject.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly AppDbContext _dbContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(AppDbContext dbContext)
         {
-            _logger = logger;
+            _dbContext = dbContext;
         }
 
         public IActionResult Index()
