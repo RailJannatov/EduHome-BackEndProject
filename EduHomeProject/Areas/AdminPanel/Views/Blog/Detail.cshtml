@@ -1,0 +1,26 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">@Model.BlogTitle</h4>
+                <p>
+                    <img src="~/img/@Model.BlogImageName" style="width:150px;height:150px" />
+                </p>
+                <p>@Model.BlogDetail.Description</p>
+                <span> Blog Categories</span>
+                @foreach (var item in Model.BlogCategories)
+                {
+                    <p>@item.Category.Name</p>
+                }        
+            </div>
+        </div>
+    </div>
+    <div>
+        <a class="btn btn-primary" asp-action="Index">Go Back</a>
+    </div>
+</div>
