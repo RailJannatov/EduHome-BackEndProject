@@ -70,8 +70,7 @@
                             @foreach (var item in ViewBag.Professions)
                             {
                                 <option value="@item.Id">@item.ProfessionName</option>
-                                
-                            }
+                                            }
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>
@@ -81,4 +80,15 @@
         </div>
     </div>
 </div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#TeacherDetail_AboutMeDescription'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 
+}

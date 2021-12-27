@@ -12,12 +12,9 @@ namespace EduHomeProject.Models
         public string Mail { get; set; }
         public string PhoneNumber { get; set; }
         public string Skype { get; set; }
-       
         public bool IsDeleted { get; set; }
-
         [ForeignKey("TeacherDetail")]
         public int TeacherDetailId { get; set; }
-
         public TeacherDetail TeacherDetail { get; set; }
     }
 }

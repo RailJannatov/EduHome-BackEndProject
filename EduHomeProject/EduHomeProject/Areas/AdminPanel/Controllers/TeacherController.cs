@@ -48,13 +48,13 @@ namespace EduHomeProject.Areas.AdminPanel.Controllers
 
             if (teacher.Photo == null)
             {
-                ModelState.AddModelError("Photo", "Please,choose image");
+                ModelState.AddModelError("", "Please,choose image");
                 return View();
             }
 
             if (!teacher.Photo.IsImage())
             {
-                ModelState.AddModelError("Photo", "Please,choose image");
+                ModelState.AddModelError("", "Please,choose image");
                 return View();
             }
 
@@ -89,7 +89,7 @@ namespace EduHomeProject.Areas.AdminPanel.Controllers
             await _dbContext.AddAsync(teacher);
             await _dbContext.SaveChangesAsync();
 
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Update(int? id)
         {
@@ -189,7 +189,7 @@ namespace EduHomeProject.Areas.AdminPanel.Controllers
 
             await _dbContext.SaveChangesAsync();
 
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
 
         }     
         public async Task<IActionResult> Detail(int? id)

@@ -1,0 +1,45 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">@Model.Title</h4>
+                <p>
+                    <img src="~/img/@Model.CourseImageName" style="width:150px;height:150px" />
+                </p>
+                <span>AboutCourse</span>
+                <p>@Model.CourseDetail.AboutCourse</p>
+                <span>Assestments</span>
+                <p>@Model.CourseDetail.Assestments</p>
+                <span>Certification</span>
+                <p>@Model.CourseDetail.Certification</p>
+                <span>ClassDuration</span>
+                <p>@Model.CourseDetail.ClassDuration</p>
+                <span>Language</span>
+                <p>@Model.CourseDetail.Language</p>
+                <span> Course Categories</span>
+                @foreach (var item in Model.CourseCategories)
+                  {
+                    <p>@item.Category.Name</p>
+                  }
+                <span>StartDate</span>
+                <p> @Model.CourseDetail.StartDate</p>
+                <span>StudentsCount</span>
+                <p> @Model.CourseDetail.StudentsCount</p>
+                <span>HowToApply</span>
+                <p> @Model.CourseDetail.HowToApply</p>
+                <span> Course Fee</span>
+                <p> @Model.CourseDetail.Fee</p>
+                <span> Students Count</span>
+                <p> @Model.CourseDetail.StudentsCount</p>
+
+
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-primary" asp-action="Index">Go Back</a>
+</div>

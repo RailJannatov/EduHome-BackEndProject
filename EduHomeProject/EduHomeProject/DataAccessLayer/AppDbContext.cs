@@ -17,10 +17,14 @@ namespace EduHomeProject.DataAccessLayer
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Profession> Professions { get; set; }
         public DbSet<TeacherProfession> TeacherProfessions { get; set; }
-    
         public DbSet<SocialAdress> SocialAdresses { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<TeacherDetail> TeacherDetails { get; set; }
         public DbSet<ContactInformation> ContactInformation { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<CourseDetail> CourseDetails { get; set; }
+        public DbSet<CourseCategory> CourseCategories { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
     }
 }

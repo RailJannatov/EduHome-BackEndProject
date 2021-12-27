@@ -4,38 +4,22 @@ using EduHomeProject.DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EduHomeProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211226112553_AddCourseDetail")]
+    partial class AddCourseDetail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.13")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("EduHomeProject.Models.Category", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("isDeleted")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Categories");
-                });
 
             modelBuilder.Entity("EduHomeProject.Models.ContactInformation", b =>
                 {
@@ -84,34 +68,9 @@ namespace EduHomeProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("isDeleted")
-                        .HasColumnType("bit");
-
                     b.HasKey("Id");
 
                     b.ToTable("Courses");
-                });
-
-            modelBuilder.Entity("EduHomeProject.Models.CourseCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("CourseId");
-
-                    b.ToTable("CourseCategories");
                 });
 
             modelBuilder.Entity("EduHomeProject.Models.CourseDetail", b =>
@@ -124,43 +83,18 @@ namespace EduHomeProject.Migrations
                     b.Property<string>("AboutCourse")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Assestments")
-                        .HasColumnType("int");
-
                     b.Property<string>("Certification")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ClassDuration")
-                        .HasColumnType("int");
 
                     b.Property<int>("CourseId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Duration")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Fee")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<string>("HowToApply")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Language")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SkillLevel")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("StudentsCount")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("CourseId")
-                        .IsUnique();
+                    b.HasIndex("CourseId");
 
                     b.ToTable("CourseDetails");
                 });
@@ -339,30 +273,11 @@ namespace EduHomeProject.Migrations
                     b.Navigation("TeacherDetail");
                 });
 
-            modelBuilder.Entity("EduHomeProject.Models.CourseCategory", b =>
-                {
-                    b.HasOne("EduHomeProject.Models.Category", "Category")
-                        .WithMany("CourseCategories")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EduHomeProject.Models.Course", "Course")
-                        .WithMany("CourseCategories")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-
-                    b.Navigation("Course");
-                });
-
             modelBuilder.Entity("EduHomeProject.Models.CourseDetail", b =>
                 {
                     b.HasOne("EduHomeProject.Models.Course", "Course")
-                        .WithOne("CourseDetail")
-                        .HasForeignKey("EduHomeProject.Models.CourseDetail", "CourseId")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -417,18 +332,6 @@ namespace EduHomeProject.Migrations
                     b.Navigation("Profession");
 
                     b.Navigation("Teacher");
-                });
-
-            modelBuilder.Entity("EduHomeProject.Models.Category", b =>
-                {
-                    b.Navigation("CourseCategories");
-                });
-
-            modelBuilder.Entity("EduHomeProject.Models.Course", b =>
-                {
-                    b.Navigation("CourseCategories");
-
-                    b.Navigation("CourseDetail");
                 });
 
             modelBuilder.Entity("EduHomeProject.Models.Profession", b =>

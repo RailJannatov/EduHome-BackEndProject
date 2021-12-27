@@ -1,0 +1,109 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create a Title</h4>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="Title">Course Title</label>
+                        <input class="form-control" asp-for="Title">
+                        <span class="text-danger" asp-validation-for="Title"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Photo">Course Photo</label>
+                        <input class="form-control" asp-for="Photo">
+                        <span class="text-danger" asp-validation-for="Photo"> </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CourseDescription">Descriptiom</label>
+                        <input class="form-control" asp-for="CourseDescription">
+                        <span class="text-danger" asp-validation-for="CourseDescription"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetail.HowToApply">HowToApply</label>
+                        <input class="form-control" asp-for="CourseDetail.HowToApply">
+                        <span class="text-danger" asp-validation-for="CourseDetail.HowToApply"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetail.AboutCourse">AboutCourse</label>
+                        <input class="form-control" asp-for="CourseDetail.AboutCourse">
+                        <span class="text-danger" asp-validation-for="CourseDetail.AboutCourse"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetail.Assestments">Assestments</label>
+                        <input class="form-control" asp-for="CourseDetail.Assestments">
+                        <span class="text-danger" asp-validation-for="CourseDetail.Assestments"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetail.Certification">Certification</label>
+                        <input class="form-control" asp-for="CourseDetail.Certification">
+                        <span class="text-danger" asp-validation-for="CourseDetail.Certification"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetail.ClassDuration">ClassDuration</label>
+                        <input class="form-control" asp-for="CourseDetail.ClassDuration">
+                        <span class="text-danger" asp-validation-for="CourseDetail.ClassDuration"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetail.Duration">Duration</label>
+                        <input class="form-control" asp-for="CourseDetail.Duration">
+                        <span class="text-danger" asp-validation-for="CourseDetail.Duration"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetail.StartDate">StartDate</label>
+                        <input class="form-control" asp-for="CourseDetail.StartDate">
+                        <span class="text-danger" asp-validation-for="CourseDetail.StartDate"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetail.Language">Language</label>
+                        <input class="form-control" asp-for="CourseDetail.Language">
+                        <span class="text-danger" asp-validation-for="CourseDetail.Language"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetail.StudentsCount">Students Number</label>
+                        <input class="form-control" asp-for="CourseDetail.StudentsCount">
+                        <span class="text-danger" asp-validation-for="CourseDetail.StudentsCount"> </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CourseDetail.Fee">Fee</label>
+                        <input class="form-control" asp-for="CourseDetail.Fee">
+                        <span class="text-danger" asp-validation-for="CourseDetail.Fee"> </span>
+                    </div>
+
+                    <div class="form-group" id="categoryInput">
+                        <label>Categories</label>
+                        <select class="form-control" name="CategoryId" id="category" multiple>
+                            @foreach (var item in ViewBag.categories)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light" asp-action="Index">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#CourseDescription'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+}

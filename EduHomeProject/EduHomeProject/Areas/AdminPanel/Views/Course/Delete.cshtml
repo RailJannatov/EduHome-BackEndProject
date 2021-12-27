@@ -1,4 +1,4 @@
-﻿@model Teacher
+﻿@model Course
 @{
     ViewData["Title"] = "Delete";
 }
@@ -7,10 +7,10 @@
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                 <h4 class="card-title">@Model.Name</h4>
-                 <p>
-                    <img src="~/img/@Model.TeacherImageName" style="width:150px;height:150px" />
-                 </p>
+                <h4 class="card-title">@Model.Title</h4>
+                <p>
+                    <img src="~/img/@Model.CourseImageName" style="width:150px;height:150px" />
+                </p>
                 <span style="color:red"> Are you suree brooo?</span>
             </div>
         </div>
