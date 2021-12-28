@@ -28,6 +28,11 @@ namespace EduHomeProject.DataAccessLayer
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<BlogDetail> BlogDetails { get; set; }
         public DbSet<BlogCategory> BlogCategories { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<EventDetail> EventDetails { get; set; }
+        public DbSet<Speaker> Speakers { get; set; }
+        public DbSet<EventSpeaker> EventSpeakers { get; set; }
+        public DbSet<EventCategory> EventCategories { get; set; }
 
     }
 }

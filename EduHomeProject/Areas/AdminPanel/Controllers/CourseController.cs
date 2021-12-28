@@ -140,15 +140,8 @@ namespace EduHomeProject.Areas.AdminPanel.Controllers
             {
                 return NotFound();
             }
-         
-            var isCourseExistInDatabase = await _dbContext.Courses.AnyAsync(x => x.Title.ToLower() == course.Title.ToLower() && x.Id != course.Id);
-            if (isCourseExistInDatabase)
-            {
-                ModelState.AddModelError("", "Change title ");
-                return View();
-            }
             var existCourseinDatabase = await _dbContext.Courses.Include(x => x.CourseDetail).Include(x => x.CourseCategories).FirstOrDefaultAsync(x => x.Id == id && x.isDeleted == false);
-            if(existCourseinDatabase == null)
+            if (existCourseinDatabase == null)
             {
                 return NotFound();
             }
@@ -157,6 +150,14 @@ namespace EduHomeProject.Areas.AdminPanel.Controllers
             {
                 return View(existCourseinDatabase);
             }
+
+            var isCourseExistInDatabase = await _dbContext.Courses.AnyAsync(x => x.Title.ToLower() == course.Title.ToLower() && x.Id != course.Id);
+            if (isCourseExistInDatabase)
+            {
+                ModelState.AddModelError("", "Change title ");
+                return View();
+            }
+         
             if (course.Photo != null)
             {
                 if (!course.Photo.IsImage())

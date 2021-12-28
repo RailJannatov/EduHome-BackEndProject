@@ -246,6 +246,104 @@ namespace EduHomeProject.Migrations
                     b.ToTable("CourseDetails");
                 });
 
+            modelBuilder.Entity("EduHomeProject.Models.Event", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("EventCity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EventImageName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EventTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.EventCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EventId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("EventId");
+
+                    b.ToTable("EventCategories");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.EventDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EventId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Reply")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventId")
+                        .IsUnique();
+
+                    b.ToTable("EventDetails");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.EventSpeaker", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("EventId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SpeakerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventId");
+
+                    b.HasIndex("SpeakerId");
+
+                    b.ToTable("EventSpeakers");
+                });
+
             modelBuilder.Entity("EduHomeProject.Models.Profession", b =>
                 {
                     b.Property<int>("Id")
@@ -322,6 +420,33 @@ namespace EduHomeProject.Migrations
                     b.HasIndex("TeacherId");
 
                     b.ToTable("SocialAdresses");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.Speaker", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SpeakerImageName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SpeakerPosition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SpeakerProfession")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Speakers");
                 });
 
             modelBuilder.Entity("EduHomeProject.Models.Teacher", b =>
@@ -480,6 +605,55 @@ namespace EduHomeProject.Migrations
                     b.Navigation("Course");
                 });
 
+            modelBuilder.Entity("EduHomeProject.Models.EventCategory", b =>
+                {
+                    b.HasOne("EduHomeProject.Models.Category", "Category")
+                        .WithMany("EventCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EduHomeProject.Models.Event", "Event")
+                        .WithMany("EventCategories")
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Event");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.EventDetail", b =>
+                {
+                    b.HasOne("EduHomeProject.Models.Event", "Event")
+                        .WithOne("EventDetail")
+                        .HasForeignKey("EduHomeProject.Models.EventDetail", "EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Event");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.EventSpeaker", b =>
+                {
+                    b.HasOne("EduHomeProject.Models.Event", "Event")
+                        .WithMany()
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EduHomeProject.Models.Speaker", "Speaker")
+                        .WithMany()
+                        .HasForeignKey("SpeakerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Event");
+
+                    b.Navigation("Speaker");
+                });
+
             modelBuilder.Entity("EduHomeProject.Models.Skill", b =>
                 {
                     b.HasOne("EduHomeProject.Models.TeacherDetail", "TeacherDetail")
@@ -542,6 +716,8 @@ namespace EduHomeProject.Migrations
                     b.Navigation("BlogCategories");
 
                     b.Navigation("CourseCategories");
+
+                    b.Navigation("EventCategories");
                 });
 
             modelBuilder.Entity("EduHomeProject.Models.Course", b =>
@@ -549,6 +725,13 @@ namespace EduHomeProject.Migrations
                     b.Navigation("CourseCategories");
 
                     b.Navigation("CourseDetail");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.Event", b =>
+                {
+                    b.Navigation("EventCategories");
+
+                    b.Navigation("EventDetail");
                 });
 
             modelBuilder.Entity("EduHomeProject.Models.Profession", b =>

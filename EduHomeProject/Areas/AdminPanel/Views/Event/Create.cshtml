@@ -1,0 +1,77 @@
+﻿@model Event
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create a Title</h4>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="Title">Course Title</label>
+                        <input class="form-control" asp-for="Title">
+                        <span class="text-danger" asp-validation-for="Title"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Photo">Course Photo</label>
+                        <input class="form-control" asp-for="Photo">
+                        <span class="text-danger" asp-validation-for="Photo"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EventCity">EventCity</label>
+                        <input class="form-control" asp-for="EventCity">
+                        <span class="text-danger" asp-validation-for="EventCity"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EventTime">EventCity</label>
+                        <input class="form-control" asp-for="EventTime">
+                        <span class="text-danger" asp-validation-for="EventTime"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EventDetail.Description">Description</label>
+                        <input class="form-control" asp-for="EventDetail.Description">
+                        <span class="text-danger" asp-validation-for="EventDetail.Description"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EventDetail.Reply">Reply</label>
+                        <input class="form-control" asp-for="EventDetail.Reply">
+                        <span class="text-danger" asp-validation-for="EventDetail.Reply"> </span>
+                    </div>
+                    <div class="form-group" id="categoryInput">
+                        <label>Categories</label>
+                        <select class="form-control" name="CategoryId" id="category" multiple>
+                            @foreach (var item in ViewBag.categories)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light" asp-action="Index">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#EventDetail_Description'))
+            .catch(error => {
+                console.error(error);
+            });
+        ClassicEditor
+            .create(document.querySelector('#EventDetail_Reply'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+}
+

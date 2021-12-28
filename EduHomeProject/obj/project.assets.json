@@ -7405,11 +7405,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rail\\Desktop\\EduHomeProject\\EduHomeProject\\EduHomeProject.csproj",
+      "projectUniqueName": "C:\\Users\\Rail\\Desktop\\BackEnd-Project-EduHome\\EduHomeProject\\EduHomeProject.csproj",
       "projectName": "EduHomeProject",
-      "projectPath": "C:\\Users\\Rail\\Desktop\\EduHomeProject\\EduHomeProject\\EduHomeProject.csproj",
+      "projectPath": "C:\\Users\\Rail\\Desktop\\BackEnd-Project-EduHome\\EduHomeProject\\EduHomeProject.csproj",
       "packagesPath": "C:\\Users\\Rail\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rail\\Desktop\\EduHomeProject\\EduHomeProject\\obj\\",
+      "outputPath": "C:\\Users\\Rail\\Desktop\\BackEnd-Project-EduHome\\EduHomeProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rail\\AppData\\Roaming\\NuGet\\NuGet.Config",
