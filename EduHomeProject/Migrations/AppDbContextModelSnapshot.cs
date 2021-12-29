@@ -344,6 +344,108 @@ namespace EduHomeProject.Migrations
                     b.ToTable("EventSpeakers");
                 });
 
+            modelBuilder.Entity("EduHomeProject.Models.FooterContact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MainMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MainNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FooterContact");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.FooterCopyrightDate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CopyrightDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FooterCopyrightDates");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.FooterSocialNetwork", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FacebookLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PinterestLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TwitterLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VimeoLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FooterSocialNetwork");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.Logo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("LogoImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Logos");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.NoticeArea", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NoticeAreas");
+                });
+
             modelBuilder.Entity("EduHomeProject.Models.Profession", b =>
                 {
                     b.Property<int>("Id")
@@ -397,6 +499,27 @@ namespace EduHomeProject.Migrations
                         .IsUnique();
 
                     b.ToTable("Skills");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.SliderImages", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SliderImagesName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SliderImages");
                 });
 
             modelBuilder.Entity("EduHomeProject.Models.SocialAdress", b =>
@@ -532,6 +655,69 @@ namespace EduHomeProject.Migrations
                     b.HasIndex("TeacherId");
 
                     b.ToTable("TeacherProfessions");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.Testimonial", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Testimonials");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.VIdeoTour", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Link")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VideoImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VIdeoTours");
+                });
+
+            modelBuilder.Entity("EduHomeProject.Models.WelcomeToEduhome", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WelcomeToEduhomeImageName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WelcomeToEduhome");
                 });
 
             modelBuilder.Entity("EduHomeProject.Models.BlogCategory", b =>

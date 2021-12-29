@@ -1,6 +1,8 @@
 ﻿using EduHomeProject.DataAccessLayer;
 using EduHomeProject.Models;
+using EduHomeProject.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -19,9 +21,18 @@ namespace EduHomeProject.Controllers
             _dbContext = dbContext;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var sliderImages = await _dbContext.SliderImages.ToListAsync();
+            var events = await _dbContext.Events.Take(4).ToListAsync();
+
+            var homeViewModel = new HomeViewModel
+            {
+                SliderImages = sliderImages,
+                Events = events
+            };
+
+            return View(homeViewModel);
         }
 
    

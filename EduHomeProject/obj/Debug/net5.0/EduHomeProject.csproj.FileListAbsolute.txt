@@ -531,3 +531,10 @@ C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Ed
 C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\EduHomeProject.genruntimeconfig.cache
 C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\Event\Index.cshtml.g.cs
 C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\Event\Create.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\Event\Update.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\Components\WelcomeToEduhome\Default.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Course\Default.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Notice\Default.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Testimonial\Default.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Blog\Default.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs

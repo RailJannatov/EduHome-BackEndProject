@@ -33,6 +33,16 @@ namespace EduHomeProject.DataAccessLayer
         public DbSet<Speaker> Speakers { get; set; }
         public DbSet<EventSpeaker> EventSpeakers { get; set; }
         public DbSet<EventCategory> EventCategories { get; set; }
+        public DbSet<SliderImages> SliderImages { get; set; }
+        public DbSet<WelcomeToEduhome> WelcomeToEduhome { get; set; }
+        public DbSet<NoticeArea> NoticeAreas { get; set; }
+        public DbSet<VIdeoTour> VIdeoTours { get; set; }
+        public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<FooterSocialNetwork> FooterSocialNetwork { get; set; }
+        public DbSet<FooterContact> FooterContact { get; set; }
+        public DbSet<FooterCopyrightDate> FooterCopyrightDates { get; set; }
+        public DbSet<Logo> Logos { get; set; }
+        public DbSet<Subscribe> Subscribes { get; set; }
 
     }
 }
