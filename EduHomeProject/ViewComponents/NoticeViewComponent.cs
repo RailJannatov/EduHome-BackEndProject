@@ -28,7 +28,6 @@ namespace EduHomeProject.ViewComponents
                 NoticeArea = noticeAreas
             };
 
-
             return View(Notice);
         }
     }

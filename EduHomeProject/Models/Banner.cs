@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 
 namespace EduHomeProject.Models
 {
-    public class NoticeArea
+    public class Banner
     {
         public int Id { get; set; }
-        public DateTime StartTime { get; set; }
-        public string Description { get; set; }
-
+        public string Title { get; set; }
+        public string BannerImageName { get; set; }
     }
 }

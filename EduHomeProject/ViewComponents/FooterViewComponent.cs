@@ -28,7 +28,6 @@ namespace EduHomeProject.ViewComponents
                 FooterContact = footerContact,
                 FooterCopyrightDate = footerCopyrightDate,
                 Logo = logo
-
             };
             return View(footer);
         }

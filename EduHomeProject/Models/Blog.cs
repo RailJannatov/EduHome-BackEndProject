@@ -10,8 +10,7 @@ namespace EduHomeProject.Models
 {
     public class Blog
     {
-        public int Id { get; set; }
-   
+        public int Id { get; set; } 
         public string BlogTitle { get; set; }
         [Required]
         [StringLength(20)]

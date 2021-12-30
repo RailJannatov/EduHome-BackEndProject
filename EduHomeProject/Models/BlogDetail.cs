@@ -10,7 +10,6 @@ namespace EduHomeProject.Models
     public class BlogDetail
     {
         public int Id { get; set; }
-   
         public string Description { get; set; }
         public string LeaveAReply { get; set; }
         public bool IsDeleted { get; set; }

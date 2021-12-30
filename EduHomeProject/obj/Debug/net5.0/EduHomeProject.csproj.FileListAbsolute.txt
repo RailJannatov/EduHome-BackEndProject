@@ -538,3 +538,6 @@ C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Ra
 C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Testimonial\Default.cshtml.g.cs
 C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Blog\Default.cshtml.g.cs
 C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Teacher\Default.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Teacher\TeacherDetail.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Course\CourseDetail.cshtml.g.cs

@@ -1,0 +1,22 @@
+﻿@model List<Teacher>
+
+@foreach (var item in Model)
+{
+<div class="col-md-3 col-sm-4 col-xs-12">
+    <div class="single-teacher mb-45">
+        <div class="single-teacher-img">
+            <a asp-controller="Teacher" asp-action="TeacherDetail" asp-route-id="@item.Id"><img src="~/img/@item.TeacherImageName" alt="teacher"></a>
+        </div>
+        <div class="single-teacher-content text-center">
+            <h2><a href="teacher-details.html">@item.Name</a></h2>
+            <h4>@item.TeacherProfessions</h4>
+            <ul>
+                @foreach (var url in item.SocialAdresses)
+                 {
+                    <li><a href="@url.Url"> <i class="zmdi zmdi-@url.UrlName"></i></a></li>
+                 }
+            </ul>
+        </div>
+    </div>
+</div>            
+}

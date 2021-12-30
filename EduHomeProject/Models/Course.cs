@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace EduHomeProject.Models
-{
+{ 
     public class Course
     {
         public int Id { get; set; }

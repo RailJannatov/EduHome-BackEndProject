@@ -11,8 +11,8 @@ namespace EduHomeProject.Models
     {
         public int Id { get; set; }
         public string Url { get; set; }
+        public string  UrlName { get; set; }
         public string SocialLogo { get; set; }
-    
         public int TeacherId { get; set; }
         public Teacher Teacher { get; set; }
     }

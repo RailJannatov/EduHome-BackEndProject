@@ -15,17 +15,13 @@ namespace EduHomeProject.Models
         [StringLength(20)]
         public string Name { get; set; }
         public string TeacherImageName { get; set; }
-        public bool isDeleted { get; set; }
-
-      
+        public bool isDeleted { get; set; }   
         public ICollection<TeacherProfession> TeacherProfessions { get; set; }
         public ICollection<SocialAdress> SocialAdresses { get; set; }
         [ForeignKey("TeacherDetails")]
         public TeacherDetail TeacherDetail { get; set; }
-
         [NotMapped]
         public IFormFile Photo { get; set; }
-
 
     }
 }
