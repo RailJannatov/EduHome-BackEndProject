@@ -125,6 +125,8 @@ $(".notice-left").niceScroll({
             cursorborder: "0px solid #fff",
             autohidemode: false,
             
-        });
+});
 
-})(jQuery);	
+
+})(jQuery);
+

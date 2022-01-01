@@ -1,0 +1,30 @@
+﻿@model List<Event>
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 col-sm-6 col-xs-12" id="event-card">
+            <div class="single-event mb-60">
+                <div class="event-img">
+                    <a asp-action="EventDetail" asp-route-id="@item.Id">
+                        <img src="~/img/@item.EventImageName" alt="event">
+                        <div class="course-hover">
+                            <i class="fa fa-link"></i>
+                        </div>
+                    </a>
+                    <div class="event-date">
+                        <h3>@item.EventTime.ToString("dd") </h3>
+                    </div>
+                </div>
+                <div class="event-content text-left">
+                    <h4><a asp-action="EventDetail" asp-route-id="@item.Id">@item.Title</a></h4>
+                    <ul>
+                        <li><span>time:</span> @item.EventTime.ToString("h.mm tt")</li>
+                        <li><span>venue</span> @item.EventCity</li>
+                    </ul>
+                    <div class="event-content-right">
+                        <a class="default-btn" asp-action="EventDetail" asp-route-id="@item.Id">join now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }

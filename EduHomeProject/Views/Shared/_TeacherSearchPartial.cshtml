@@ -1,0 +1,26 @@
+﻿@model List<Teacher>
+
+@foreach (var item in Model)
+{
+    <div class="col-md-3 col-sm-4 col-xs-12" id="teacher-card">
+        <div class="single-teacher">
+            <div class="single-teacher-img">
+                <a asp-controller="Teacher" asp-action="TeacherDetail" asp-route-id="@item.Id"><img src="~/img/@item.TeacherImageName" alt="teacher"></a>
+            </div>
+            <div class="single-teacher-content text-center">
+                <h2><a asp-controller="Teacher" asp-action="TeacherDetail" asp-route-id="@item.Id">@item.Name</a></h2>
+                <h4>@item.TeacherProfessions.FirstOrDefault().Profession.ProfessionName</h4>
+                <ul>
+                    @foreach (var socialMedia in item.SocialAdresses)
+                    {
+                       
+                            <li><a href="@socialMedia.Url"><i class="@socialMedia.UrlName"></i></a></li>
+
+                      
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+

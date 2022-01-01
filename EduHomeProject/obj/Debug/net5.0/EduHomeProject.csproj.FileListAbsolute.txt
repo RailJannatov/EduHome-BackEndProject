@@ -541,3 +541,7 @@ C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Ra
 C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Teacher\Default.cshtml.g.cs
 C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Teacher\TeacherDetail.cshtml.g.cs
 C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Course\CourseDetail.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\Components\Banner\Default.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\_TeacherSearchPartial.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\_BlogSearchPartial.cshtml.g.cs
+C:\Users\Rail\Desktop\BackEnd-Project-EduHome\EduHomeProject\obj\Debug\net5.0\Razor\Views\Shared\_EventSearchPartial.cshtml.g.cs

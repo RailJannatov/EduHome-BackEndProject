@@ -1,7 +1,7 @@
 ﻿@model List<Teacher>
-
-@foreach (var item in Model)
-{
+<div class="row" id="teacher-list">
+    @foreach (var item in Model)
+    {
 <div class="col-md-3 col-sm-4 col-xs-12">
     <div class="single-teacher mb-45">
         <div class="single-teacher-img">
@@ -12,11 +12,12 @@
             <h4>@item.TeacherProfessions</h4>
             <ul>
                 @foreach (var url in item.SocialAdresses)
-                 {
+                {
                     <li><a href="@url.Url"> <i class="zmdi zmdi-@url.UrlName"></i></a></li>
-                 }
+                }
             </ul>
         </div>
     </div>
-</div>            
+</div>
 }
+</div>

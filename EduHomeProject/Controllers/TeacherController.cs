@@ -41,5 +41,18 @@ namespace EduHomeProject.Controllers
             }
             return View(teacherDetail);
         }
+        public async Task<IActionResult> Search(string search)
+        {
+            if (string.IsNullOrEmpty(search))
+            {
+                return NotFound();
+            }
+
+            var teachers = await _dbContext.Teachers.Where(x=> x.Name.ToLower().Contains(search.ToLower()))
+                .Include(x => x.TeacherProfessions).ThenInclude(x => x.Profession)
+                .Include(x => x.SocialAdresses).ToListAsync();
+
+            return PartialView("_TeacherSearchPartial", teachers);
+        }
     }
 }

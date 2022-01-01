@@ -43,6 +43,7 @@ namespace EduHomeProject.DataAccessLayer
         public DbSet<FooterCopyrightDate> FooterCopyrightDates { get; set; }
         public DbSet<Logo> Logos { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
+        public DbSet<Banner> Banners { get; set; }
 
     }
 }

@@ -88,7 +88,7 @@
 
                             @foreach (var item in Model.CourseCategories)
                              {
-                             <li><a href="#">@item.Category.Name (10)</a></li>
+                             <li><a href="#">@item.Category.Name (@item.Category.CourseCategories.Count)</a></li>
                               }
                         </ul>
                     </div>

@@ -22,11 +22,25 @@
 <!-- Banner Area End -->
 <!-- Teacher Start -->
 <div class="teacher-area pt-150 pb-105">
-    <div class="container">
-        <div class="row">
-       @await Component.InvokeAsync("Teacher")
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="course-title" style="text-align:left;">
+                        <h3>search teachers</h3>
+                    </div>
+                    <div class="course-form">
+                        <form id="search" action="#">
+                            <input type="search" id="teacher-search-input" placeholder="Search..." name="search" />
+                        </form>
+                    </div>
+                    <div id="teacher-result"></div>
+                </div>
+            </div>
+            <div class="container">
+      
+                    @await Component.InvokeAsync("Teacher")
+               
+            </div>
         </div>
-    </div>
-</div>
-<!-- Teacher End -->
+        <!-- Teacher End -->
 
